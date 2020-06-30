@@ -1,21 +1,14 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
-import axios from 'axios'
+import useFetch from '../../hooks/useFetch'
 
 export const Authentication = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const handleSubmit = (e) => {
+  const [{isLoading, response, errors}, doFetch] = useFetch('users/login')
+  const handleSubmit = e => {
     e.preventDefault()
-    console.log('data ', email, password)
-    setIsSubmitting(true)
-  }
-  useEffect(() => {
-    if (!isSubmitting) {
-      return
-    }
-    axios('https://conduit.productionready.io/api/users/login', {
+    doFetch({
       method: 'post',
       data: {
         user: {
@@ -24,15 +17,7 @@ export const Authentication = () => {
         },
       },
     })
-      .then((res) => {
-        console.log('success ', res)
-        setIsSubmitting(false)
-      })
-      .catch((error) => {
-        console.log('error ', error)
-        setIsSubmitting(false)
-      })
-  })
+  }
 
   return (
     <div className="container page">
@@ -49,7 +34,7 @@ export const Authentication = () => {
                   type="email"
                   placeholder="Email"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={e => setEmail(e.target.value)}
                   className="form-control form-control-lg"
                 />
               </fieldset>
@@ -58,14 +43,14 @@ export const Authentication = () => {
                   type="password"
                   placeholder="Password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={e => setPassword(e.target.value)}
                   className="form-control form-control-lg"
                 />
               </fieldset>
               <button
                 type="submit"
                 className="btn btn-lg btn-primary pull-xs-right"
-                disabled={isSubmitting}
+                disabled={isLoading}
               >
                 Sign in
               </button>
