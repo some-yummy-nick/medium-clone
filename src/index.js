@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {BrowserRouter as Router} from 'react-router-dom'
-
+import TopBar from './components/TopBar/TopBar'
 import Routes from './routes'
 
 const App = () => (
   <>
-    <h1>Welcome to Hooks</h1>
     <Router>
+      <TopBar />
       <Routes />
     </Router>
   </>
