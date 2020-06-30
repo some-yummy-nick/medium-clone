@@ -1,5 +1,5 @@
-import React from 'react';
+import React from 'react'
 
-export const Article = () => <>Article</>;
+export const Article = () => <>Article</>
 
-export default Article;
+export default Article
