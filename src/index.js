@@ -1,11 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import {BrowserRouter as Router} from "react-router-dom";
+
+import Routes from "./routes";
+
+const App = () =>
+    <>
+        <h1>Welcome to Hooks</h1>
+        <Router>
+            <Routes/>
+        </Router>
+    </>;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App/>
+    </React.StrictMode>,
+    document.getElementById('root')
 );
-
