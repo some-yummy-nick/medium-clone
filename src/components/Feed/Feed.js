@@ -19,10 +19,12 @@ export const Feed = ({articles}) => (
             <span className="date">{article.createdAt}</span>
           </div>
         </div>
-        <Link to={`/articles/${article.slug}`} className="preview-link">
+        <div className="preview-link">
           <h1>{article.title}</h1>
           <p>{article.description}</p>
-          <span>Read more...</span>
+          <Link to={`/articles/${article.slug}`}>
+            <span>Read more...</span>
+          </Link>
           <ul className="tag-list">
             {article.tagList.map(tag => (
               <li
@@ -33,7 +35,7 @@ export const Feed = ({articles}) => (
               </li>
             ))}
           </ul>
-        </Link>
+        </div>
       </div>
     ))}
   </>
