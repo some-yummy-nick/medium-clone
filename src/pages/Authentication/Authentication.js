@@ -11,7 +11,7 @@ export const Authentication = props => {
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const [isSuccessfulSubmit, setIsSuccessfulSubmit] = useState(false)
-  const [{isLoading, response, errors}, doFetch] = useFetch(url)
+  const [{isLoading, response}, doFetch] = useFetch(url)
   const [token, setToken] = useLocalStorage('token')
   console.log(token)
   const handleSubmit = e => {
@@ -29,7 +29,7 @@ export const Authentication = props => {
     }
     setToken(response.user.token)
     setIsSuccessfulSubmit(true)
-  }, [response])
+  }, [response, setToken])
 
   if (isSuccessfulSubmit) {
     return <Redirect to="/" />
