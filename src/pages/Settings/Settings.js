@@ -55,6 +55,10 @@ export const Settings = () => {
     dispatch({type: 'SET_AUTHORIZED', payload: response.user})
   }, [response, dispatch])
 
+  if (currentUserState.isLoggedIn === false) {
+    return <Redirect to="/" />
+  }
+
   if (isSuccessfulLogout) {
     return <Redirect to="/" />
   }

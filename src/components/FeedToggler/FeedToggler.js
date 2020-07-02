@@ -23,7 +23,7 @@ export const FeedToggler = ({tagName}) => {
         </li>
         {tagName && (
           <li className="li nav-item">
-            <NavLink className="nav-link" to={`tags/${tagName}`}>
+            <NavLink className="nav-link" to={`/tags/${tagName}`}>
               <i className="ion-pound" />
               {tagName}
             </NavLink>

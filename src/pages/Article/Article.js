@@ -6,6 +6,7 @@ import useFetch from 'hooks/useFetch'
 import Loading from 'components/Loading/Loading'
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage'
 import TagList from 'components/TagList/TagList'
+import Comments from 'components/Comments/Comments'
 import {formatDate} from 'utils'
 
 export const Article = ({match}) => {
@@ -109,6 +110,11 @@ export const Article = ({match}) => {
             </div>
           </div>
         )}
+        <div className="row">
+          <div className="col-xs-12 col-md-8 offset-md-2">
+            <Comments slug={slug} />
+          </div>
+        </div>
       </div>
     </div>
   )
