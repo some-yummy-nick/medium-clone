@@ -6,6 +6,7 @@ import useFetch from 'hooks/useFetch'
 import Loading from 'components/Loading/Loading'
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage'
 import TagList from 'components/TagList/TagList'
+import {formatDate} from 'utils'
 
 export const Article = ({match}) => {
   const [currentUserState] = useContext(CurrentUserContext)
@@ -67,7 +68,7 @@ export const Article = ({match}) => {
                   {fetchArticleResponse.article.author.username}
                 </Link>
                 <span className="date">
-                  {fetchArticleResponse.article.createdAt}
+                  {formatDate(fetchArticleResponse.article.createdAt)}
                 </span>
               </div>
               {isAuthor() && (
