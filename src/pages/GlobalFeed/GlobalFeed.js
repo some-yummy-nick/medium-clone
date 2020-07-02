@@ -1,8 +1,11 @@
 import React, {useEffect} from 'react'
 import useFetch from '../../hooks/useFetch'
 import {stringify} from 'query-string'
-import Feed from '../../components/Feed/Feed'
-import Pagination from '../../components/Pagination/Pagination'
+import Feed from 'components/Feed/Feed'
+import Pagination from 'components/Pagination/Pagination'
+import PopularTags from 'components/PopularTags/PopularTags'
+import Loading from 'components/Loading/Loading'
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage'
 import {getPaginator} from '../../utils'
 import {LIMIT} from '../../constants'
 
@@ -29,8 +32,8 @@ export const GlobalFeed = ({location, match}) => {
       <div className="container page">
         <div className="row">
           <div className="col-md-9">
-            {isLoading && <div>Loading...</div>}
-            {errors && <div>Some error happened</div>}
+            {isLoading && <Loading />}
+            {errors && <ErrorMessage />}
             {!isLoading && response && (
               <>
                 <Feed articles={response.articles} />
@@ -43,7 +46,9 @@ export const GlobalFeed = ({location, match}) => {
               </>
             )}
           </div>
-          <div className="col-md-3">Popular tags</div>
+          <div className="col-md-3">
+            <PopularTags />
+          </div>
         </div>
       </div>
     </div>
