@@ -8,12 +8,12 @@ import BackendErrorMessages from 'components/BackendErrorMessages/BackendErrorMe
 export const Authentication = props => {
   const isLogin = props.match.path === '/login'
   const title = isLogin ? 'Sign in' : 'Sign up'
-  const url = isLogin ? 'users/login' : 'users'
+  const apiUrl = isLogin ? 'users/login' : 'users'
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const [isSuccessfulSubmit, setIsSuccessfulSubmit] = useState(false)
-  const [{isLoading, response, errors}, doFetch] = useFetch(url)
+  const [{isLoading, response, errors}, doFetch] = useFetch(apiUrl)
   const [, setToken] = useLocalStorage('token')
   const [, dispatch] = useContext(CurrentUserContext)
 

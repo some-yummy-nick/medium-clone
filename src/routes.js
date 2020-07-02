@@ -5,6 +5,7 @@ import Article from 'pages/Article/Article'
 import Authentication from 'pages/Authentication/Authentication'
 import TagFeed from 'pages/TagFeed/TagFeed'
 import YourFeed from 'pages/YourFeed/YourFeed'
+import CreateArticle from 'pages/CreateArticle/CreateArticle'
 
 export default () => (
   <Switch>
@@ -13,6 +14,7 @@ export default () => (
     <Route path="/tags/:slug" component={TagFeed} />
     <Route path="/login" component={Authentication} />
     <Route path="/register" component={Authentication} />
+    <Route path="/articles/new" component={CreateArticle} />
     <Route path="/articles/:slug" component={Article} />
   </Switch>
 )
