@@ -31,7 +31,7 @@ export const Feed = ({articles}) => (
                 key={`tag-${tag}`}
                 className="tag-default tag-pill tag-outline"
               >
-                {tag}
+                <Link to={`/tags/${tag}`}>{tag}</Link>
               </li>
             ))}
           </ul>
