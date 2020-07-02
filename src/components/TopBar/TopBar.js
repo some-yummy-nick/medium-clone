@@ -40,10 +40,7 @@ export const TopBar = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink
-                  to={`/profiles/${currentUserState.currentUser.username}`}
-                  className="nav-link"
-                >
+                <NavLink to="/settings" className="nav-link">
                   {currentUserState.currentUser.image && (
                     <>
                       <img
