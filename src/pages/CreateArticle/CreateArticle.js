@@ -32,13 +32,11 @@ export const CreateArticle = () => {
   }
 
   return (
-    <>
-      <ArticleForm
-        onSubmit={onSubmit}
-        errors={(errors && errors.errors) || {}}
-        initialValues={initialValues}
-      />
-    </>
+    <ArticleForm
+      onSubmit={onSubmit}
+      errors={(errors && errors.errors) || {}}
+      initialValues={initialValues}
+    />
   )
 }
 
