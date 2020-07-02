@@ -2,6 +2,8 @@
 
 [Результат](https://some-yummy-medium-clone.netlify.app)
 
+По курсу на [Udemy](https://www.udemy.com/course/react-hooks-writing-real-project/)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
