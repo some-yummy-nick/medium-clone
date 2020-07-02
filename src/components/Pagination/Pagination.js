@@ -1,5 +1,5 @@
 import React from 'react'
-import {range} from '../../utils'
+import {range} from 'utils'
 import {Link} from 'react-router-dom'
 import classNames from 'classnames'
 import './pagination.css'

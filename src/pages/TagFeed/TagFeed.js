@@ -1,13 +1,13 @@
 import React, {useEffect} from 'react'
-import useFetch from '../../hooks/useFetch'
 import {stringify} from 'query-string'
+import useFetch from 'hooks/useFetch'
 import Feed from 'components/Feed/Feed'
 import Pagination from 'components/Pagination/Pagination'
 import PopularTags from 'components/PopularTags/PopularTags'
 import Loading from 'components/Loading/Loading'
 import ErrorMessage from 'components/ErrorMessage/ErrorMessage'
 import FeedToggler from 'components/FeedToggler/FeedToggler'
-import {getPaginator} from '../../utils'
+import {getPaginator} from 'utils'
 import {LIMIT} from '../../constants'
 
 export const TagFeed = ({location, match}) => {
