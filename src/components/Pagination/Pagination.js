@@ -2,6 +2,7 @@ import React from 'react'
 import {range} from '../../utils'
 import {Link} from 'react-router-dom'
 import classNames from 'classnames'
+import './pagination.css'
 
 const PaginationItem = ({page, currentPage, url}) => (
   <li className={classNames('page-item', {active: currentPage === page})}>
@@ -16,16 +17,18 @@ export const Pagination = ({total, limit, url, currentPage}) => {
   const pages = range(1, pagesCount)
   return (
     <>
-      <ul className="pagination">
-        {pages.map(page => (
-          <PaginationItem
-            page={page}
-            currentPage={currentPage}
-            url={url}
-            key={`pagination-${page}`}
-          />
-        ))}
-      </ul>
+      {pages.length > 1 && (
+        <ul className="pagination">
+          {pages.map(page => (
+            <PaginationItem
+              page={page}
+              currentPage={currentPage}
+              url={url}
+              key={`pagination-${page}`}
+            />
+          ))}
+        </ul>
+      )}
     </>
   )
 }
