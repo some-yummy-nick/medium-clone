@@ -1,7 +1,8 @@
 import React from 'react'
-import {range} from 'utils'
 import {Link} from 'react-router-dom'
 import classNames from 'classnames'
+
+import {range} from 'utils'
 import './pagination.css'
 
 const PaginationItem = ({page, currentPage, url}) => (

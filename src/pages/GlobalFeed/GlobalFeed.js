@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
-import useFetch from 'hooks/useFetch'
 import {stringify} from 'query-string'
+
+import useFetch from 'hooks/useFetch'
 import Feed from 'components/Feed/Feed'
 import Pagination from 'components/Pagination/Pagination'
 import PopularTags from 'components/PopularTags/PopularTags'

@@ -1,6 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+
 import TagList from 'components/TagList/TagList'
+import AddToFavorite from 'components/AddToFavorite/AddToFavorite'
+
 export const Feed = ({articles}) => (
   <>
     {articles.length ? (
@@ -18,6 +21,13 @@ export const Feed = ({articles}) => (
                 {article.author.username}
               </Link>
               <span className="date">{article.createdAt}</span>
+            </div>
+            <div className="pull-xs-right">
+              <AddToFavorite
+                isFavorited={article.favorited}
+                favoritesCount={article.favoritesCount}
+                articleSlug={article.slug}
+              />
             </div>
           </div>
           <div className="preview-link">
