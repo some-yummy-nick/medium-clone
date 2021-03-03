@@ -1,3 +1,5 @@
+![screenshot](https://github.com/some-yummy-nick/medium-clone/blob/master/medium-clone.png)
+
 [Пример](http://angular.realworld.io/)
 
 [Результат](https://some-yummy-medium-clone.netlify.app)
